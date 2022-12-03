@@ -1,7 +1,12 @@
 .header__line {
   width: 880px;
-  border: 1px solid;
+  border: 1px solid center;
   opacity: 0.7;
   color: #545454;
   margin: 0;
+}
+@media screen and (max-width: 320px) {
+  .header__line {
+     width: 320px;
+  }
 }

@@ -4,8 +4,8 @@
   background-color: white;
   border-radius: 10px;
 }
-/*.elements__item {
-  max-width: 282px;
- 
-  position: absolute;
-}*/
+@media screen and (max-width: 320px) {
+  .elements__item {
+     margin: 0 auto;
+  }
+}
