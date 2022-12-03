@@ -1,0 +1,11 @@
+.elements__item {
+  max-width: 282px;
+  min-height: 361px;
+  background-color: white;
+  border-radius: 10px;
+}
+/*.elements__item {
+  max-width: 282px;
+ 
+  position: absolute;
+}*/
