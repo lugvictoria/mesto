@@ -1,79 +1,93 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link rel="stylesheet" href="pages/index.css"/>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="pages/index.css">
 		<title>Место</title>
 	</head>
 	<body class="page">
 		<header class="header">
-			<img src="images/logo.svg" class="header__logo" alt="Логотип Место"/>
-			<hr class="header__line"/>
+			<img src="images/logo.svg" class="header__logo" alt="Логотип Место">
+			<hr class="header__line">
 		</header>
 		<main>
 			<section class="profile">
 				<div class="profile__avatar">
-					<img src="images/image.jpg" class="profile__avatar-image" alt="Фото Жак-Ив Кусто"/>
+					<img src="images/image.jpg" class="profile__avatar-image" alt="Фото Жак-Ив Кусто">
 					<div class="profile-info">
 						<h1 class="profile__title">Жак-Ив&nbsp;Кусто</h1>
 						<p class="profile__subtitle">Исследователь&nbsp;океана</p>
 					</div>
 					<div class="pic_square">
-						<img src="images/pensil.svg" class="elements__sign" alt="Карандашик"/>
+						<button class="profiles__buttons-edit" type="submit"></button>
+			<!--			<img src="images/pensil.svg" class="elements__sign" alt="Карандашик">-->
 					</div>
 					<div class="pic_rectangle">
-						<img src="images/plus.svg" class="elements__sign" alt="Плюсик в прямоугольнике"/>
+						<button class="profiles__buttons-add" type="button"></button>
+			<!--	<img src="images/plus.svg" class="elements__sign" alt="Плюсик в прямоугольнике">-->
 					</div>
 				</div>
 			</section>
 			<section class="elements">
 				<div class="elements__item">
-					<img src="images/karach.jpg" class="elements__image" alt="Карачаевск"/>
+					<img src="images/karach.jpg" class="elements__image" alt="Карачаевск">
 					<div class="elements__group">
 						<h2 class="elements__title">Карачаевск</h2>
-						<img src="images/Vector.svg" class="elements__sign" alt="сердечко"/>
+						<img src="images/heart.svg" class="elements__sign" alt="сердечко">
 					</div>
 				</div>
 				<div class="elements__item">
-					<img src="images/elbrus.jpg" class="elements__image" alt="Гора Эльбрус"/>
+					<img src="images/elbrus.jpg" class="elements__image" alt="Гора Эльбрус">
 					<div class="elements__group">
 						<h2 class="elements__title">Гора Эльбрус</h2>
-						<img src="images/Vector.svg" class="elements__sign" alt="сердечко"/>
+						<img src="images/heart.svg" class="elements__sign" alt="сердечко">
 					</div>
 				</div>
 				<div class="elements__item">
-					<img src="images/donbai.jpg" class="elements__image" alt="Домбай"/>
+					<img src="images/donbai.jpg" class="elements__image" alt="Домбай">
 					<div class="elements__group">
 						<h2 class="elements__title">Домбай</h2>
-						<img src="images/Vector.svg" class="elements__sign" alt="сердечко"/>
+						<img src="images/heart.svg" class="elements__sign" alt="сердечко">
 					</div>
 				</div>
 				<div class="elements__item">
-					<img src="images/baikal.jpg" class="elements__image" alt="Байкал"/>
+					<img src="images/baikal.jpg" class="elements__image" alt="Байкал">
 					<div class="elements__group">
 						<h2 class="elements__title">Байкал</h2>
-						<img src="images/Vector.svg" class="elements__sign" alt="сердечко"/>
+						<img src="images/heart.svg" class="elements__sign" alt="сердечко">
 					</div>
 				</div>
 				<div class="elements__item">
-					<img src="images/river_lena.jpg" class="elements__image" alt="Река Лена"/>
+					<img src="images/river_lena.jpg" class="elements__image" alt="Река Лена">
 					<div class="elements__group">
 						<h2 class="elements__title">Река Лена</h2>
-						<img src="images/Vector.svg" class="elements__sign" alt="сердечко"/>
+						<img src="images/heart.svg" class="elements__sign" alt="сердечко">
 					</div>
 				</div>
 				<div class="elements__item">
-					<img src="images/ozero_altai.jpg" class="elements__image" alt="Гейзерное озеро Алтай"/>
+					<img src="images/ozero_altai.jpg" class="elements__image" alt="Гейзерное озеро Алтай">
 					<div class="elements__group">
 						<h2 class="elements__title">Озеро Алтай</h2>
-						<img src="images/Vector.svg" class="elements__sign" alt="сердечко"/>
+						<img src="images/heart.svg" class="elements__sign" alt="сердечко">
 					</div>
 				</div>
 			</section>
+			<div class="popup">
+				<div class="popup__container">
+					<button class="popup__buttons-close" type="button"></button>
+					<h3 class="popup__title">Редактировать профиль</h3>
+			     <form class="popup__form" name="form"> 
+						<input type="text" class="popup__inputs popup__inputs_type_name" placeholder="" name="name">
+						<input type="text" class="popup__inputs popup__inputs_type_hobby" placeholder="" name="hobby">
+						<button class="popup__buttons-save" type="submit">Сохранить</button>
+					</form>
+				</div>
+			</div>
 		</main>
 		<footer class="footer">
 			<p class="footer__copyright">© 2020 Mesto Russia</p>
 		</footer>
+		<script src="./scripts/index.js"></script>
 	</body>
 </html>

@@ -7,26 +7,27 @@
 }
 @media screen and (max-width: 320px) {
   .profile {
-     max-width: 320px;
-     margin: 0 auto;
-     padding-top: 38.25px;
-     padding-bottom: 22.25px;
+    max-width: 320px;
+    margin: 0 auto;
+    padding-top: 38.25px;
+    padding-bottom: 22.25px;
   }
 }
 .pic_rectangle {
-  display: flex;
   width: 150px;
   height: 50px;
   border: 2px solid;
   box-sizing: border-box;
-  right: 0;
   margin: 35px 0 35px auto;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(/images/plus.svg);
 }
 @media screen and (max-width: 320px) {
   .pic_rectangle {
-     width: 282px;
-     margin: 0 auto;
+    width: 282px;
+    margin: 0 auto;
   }
 }
 .pic_square {
@@ -37,4 +38,21 @@
   box-sizing: border-box;
   justify-content: center;
   margin: 37px auto auto 19px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(/images/pen.svg);
+}
+.profiles__buttons-add {
+  background-color: transparent;
+  margin: 0 auto;
+  margin-top: 34px;
+  width: 282px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  background-image: url(/images/plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  grid-area: add;
 }
