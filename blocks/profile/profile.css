@@ -22,7 +22,7 @@
   justify-content: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(/images/plus.svg);
+  background-image: url('../../../mesto/images/plus.svg');
 }
 @media screen and (max-width: 320px) {
   .pic_rectangle {
@@ -40,7 +40,7 @@
   margin: 37px auto auto 19px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(/images/pen.svg);
+  background-image: url('../../../mesto/images/pen.svg');
 }
 .profiles__buttons-add {
   background-color: transparent;
@@ -50,7 +50,7 @@
   height: 50px;
   border: 2px solid #ffffff;
   border-radius: 2px;
-  background-image: url(/images/plus.svg);
+  background-image: url('../../../mesto/images/plus.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 16px;
