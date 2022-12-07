@@ -20,7 +20,7 @@
 .profiles__buttons-edit {
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid #ffffff;
-  background-image: url(/images/pen.svg);
+  background-image: url('../../../mesto/images/pen.svg');
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;
@@ -116,7 +116,7 @@
   height: 50px;
   border: 2px solid #ffffff;
   border-radius: 2px;
-  background-image: url(/images/plus.svg);
+  background-image: url('../../../mesto/images/plus.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 16px;
