@@ -7,6 +7,5 @@
   .profile__info {
     max-width: 282px;
     margin: 0 19px 0 19px;
-    grid-template-columns: repeat(auto, 56px)
   }
 }
