@@ -9,26 +9,6 @@
   justify-content: center;
   align-items: center;
 }
-.popup__container {
-  display: flex;
-  width: 100%;
-  max-width: 430px;
-  box-sizing: border-box;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 34px 36px 37px 36px;
-  background-color: #fff;
-  position: relative;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-}
-@media screen and (max-width: 550px) {
-  .popup__container {
-    max-width: 282px;
-    padding: 25px 22px;
-  }
-}
 .popup_opened {
   visibility: visible;
   opacity: 1;
@@ -39,13 +19,25 @@
 .profiles__buttons-edit {
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid #ffffff;
-  background-image: url(/images/EditButton.svg);
+  background-image: url(/images/pen.svg);
   background-repeat: no-repeat;
-  width: 18px;
-  height: 18px;
-  background-size: 7.5px 7.5px;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  background-size: 10px 10px;
   background-position: center;
   align-self: center;
+  box-sizing: border-box; 
+  margin: 37px auto auto 19px;
+  padding: 0;
+}
+@media screen and (max-width: 320px) {
+  .profiles__buttons-edit {
+    width: 18px;
+    height: 18px;
+    background-size: 7.5px 7.5px;
+    margin: 37px 38px auto 15.25px;
+  }
 }
 .popup__buttons-close {
   position: absolute;
@@ -59,24 +51,6 @@
   background-size: cover;
   width: 20px;
   height: 20px;
-}
-.popup__title {
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000000;
-  margin: 0;
-  width: 100%;
-  max-width: 358px;
-  margin-bottom: 72px;
-  background-color: white;
-}
-@media screen and (max-width: 550px) {
-  .popup__title {
-    max-width: 238px;
-    font-size: 18px;
-    line-height: 22px;
-  }
 }
 .popup__inputs {
   margin-bottom: 28px;
@@ -108,10 +82,48 @@
   text-align: center;
   border: 0;
   border-radius: 2px;
+  padding: 0;
 }
 @media screen and (max-width: 550px) {
   .popup__inputs {
     max-width: 238px;
     height: 46px;
+  }
+}
+.pic_rectangle {
+  width: 150px;
+  height: 50px;
+  border: 2px solid;
+  box-sizing: border-box;
+  margin: 35px 0 35px auto;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../../../mesto/images/plus.svg');
+}
+@media screen and (max-width: 320px) {
+  .pic_rectangle {
+    width: 282px;
+    margin: 0 auto;
+  }
+}
+.profiles__buttons-add {
+  background-color: transparent;
+  margin: 0 auto;
+  margin: 35px 0 35px auto;
+  width: 150px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  background-image: url(/images/plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  padding: 0;
+}
+@media screen and (max-width: 320px) {
+  .profiles__buttons-add {
+    width: 282px;
+    margin: 36px auto 0 auto;
   }
 }
