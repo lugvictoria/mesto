@@ -22,9 +22,10 @@
 @media screen and (max-width: 320px) {
   .footer__copyright {
     max-width: 282px;
-    min-height: 14px;
+    font-size: 14px;
+    line-height: 17px;
     margin-left: 19px;
-    padding-top: 48px;
+    padding-top: 5px;
     padding-bottom: 36px;
   }
 }

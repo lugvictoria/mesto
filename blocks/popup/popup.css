@@ -29,7 +29,7 @@
   background-position: center;
   align-self: center;
   box-sizing: border-box; 
-  margin: 37px auto auto 19px;
+  margin: 0;
   padding: 0;
 }
 @media screen and (max-width: 320px) {
@@ -37,7 +37,6 @@
     width: 18px;
     height: 18px;
     background-size: 7.5px 7.5px;
-    margin: 37px 38px auto 15.25px;
   }
 }
 .popup__buttons-close {
@@ -125,6 +124,6 @@
 @media screen and (max-width: 320px) {
   .profiles__buttons-add {
     width: 282px;
-    margin: 36px auto 0 auto;
+    margin: 30px auto 0 auto;
   }
 }
