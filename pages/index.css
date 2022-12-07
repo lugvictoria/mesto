@@ -16,14 +16,22 @@
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__edit/profile__edit.css);
 @import url(../blocks/profile/__title/profile__title.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
 @import url(../blocks/profile/__table/profile__table.css);
+@import url(../blocks/profile/__buttons-pen/profiles__buttons-pen.css);
+@import url(../blocks/profile/__buttons-plus/profiles__buttons-plus.css);
 @import url(../blocks/profile/__avatar-image/profile__avatar-image.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__inputs/popup__inputs.css);
+@import url(../blocks/popup/__buttons-close/popup__buttons-close.css);
+@import url(../blocks/popup/__buttons-save/popup__buttons-save.css);

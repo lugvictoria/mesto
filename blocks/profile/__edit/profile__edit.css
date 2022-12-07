@@ -1,0 +1,13 @@
+.profile__edit {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 0px 30px;
+  padding-top: 25px;
+  padding-bottom: 0px;
+  gap: 20px;
+}
+@media screen and (max-width: 320px) {
+  .profile__edit {
+    padding-top: 24px;
+  }
+}
