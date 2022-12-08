@@ -1,15 +1,14 @@
 .profiles__buttons-pen {
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid #ffffff;
-  background-image: url('../../../images/pen.svg');
+  background-image: url("../../../images/pen.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;
   height: 24px;
   background-size: 10px 10px;
-  background-position: center;
   align-self: center;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }

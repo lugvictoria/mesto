@@ -6,7 +6,7 @@
   height: 50px;
   border: 2px solid #ffffff;
   border-radius: 2px;
-  background-image: url('../../../images/plus.svg');
+  background-image: url("../../../images/plus.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px 16px;
