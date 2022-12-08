@@ -1,12 +1,12 @@
 let popup = document.querySelector('.popup');
 let form = document.querySelector('.popup__container');
-let buttonEdit = document.querySelector('.profiles__buttons-edit');
+let buttonEdit = document.querySelector('.profile__buttons-edit');
 let buttonSave = document.querySelector('.popup__form');
 let popupClose = document.querySelector('.popup__buttons-close');
 let inputName = document.querySelector('.popup__inputs_name');
 let inputProffession = document.querySelector('.popup__inputs_proffession');
-let gname = document.querySelector('.profiles__name');
-let proffession = document.querySelector('.profiles__subtitle');
+let gname = document.querySelector('.profile__name');
+let proffession = document.querySelector('.profile__subtitle');
 
 // функция для открытия popup
 function openPopup() {
