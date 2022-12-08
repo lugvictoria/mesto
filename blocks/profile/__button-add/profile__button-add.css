@@ -12,15 +12,18 @@
   background-size: 16px 16px;
   padding: 0;
 }
+
 .profile__button-add:hover {
   opacity: 0.6;
 }
+
 @media screen and (max-width: 770px) {
   .profile__button-add {
     width: 90%;
     margin-right: auto;
   }
 }
+
 @media screen and (max-width: 320px) {
   .profile__button-add {
     width: 282px;

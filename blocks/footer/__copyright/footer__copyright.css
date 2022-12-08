@@ -9,12 +9,14 @@
   left: 0;
   color: #545454;
 }
+
 @media screen and (max-width: 767px) {
   .footer__copyright {
     margin-top: 48px;
     margin-left: 0;
   }
 }
+
 @media screen and (max-width: 320px) {
   .footer__copyright {
     max-width: 282px;
