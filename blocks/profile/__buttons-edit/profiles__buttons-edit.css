@@ -1,4 +1,4 @@
-.profiles__buttons-pen {
+.profiles__buttons-edit {
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid #ffffff;
   background-image: url("../../../images/pen.svg");
@@ -12,11 +12,11 @@
   margin: 0;
   padding: 0;
 }
-.profiles__buttons-pen:hover {
+.profiles__buttons-edit:hover {
   opacity: 0.6;
 }
 @media screen and (max-width: 320px) {
-  .profiles__buttons-pen {
+  .profiles__buttons-edit {
     width: 18px;
     height: 18px;
     background-size: 7.5px 7.5px;
