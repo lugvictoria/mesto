@@ -12,6 +12,15 @@
   background-size: 16px 16px;
   padding: 0;
 }
+.profiles__buttons-plus:hover {
+  opacity: 0.6;
+}
+@media screen and (max-width: 770px) {
+  .profiles__buttons-plus {
+    width: 90%;
+    margin-right: auto;
+  }
+}
 @media screen and (max-width: 320px) {
   .profiles__buttons-plus {
     width: 282px;

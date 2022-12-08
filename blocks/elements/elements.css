@@ -8,12 +8,22 @@
   row-gap: 20px;
   margin: 0 auto;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 770px) {
   .elements {
-    max-width: 320px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+} 
+@media screen and (max-width: 600px) {
+  .elements {
     grid-template-columns: repeat(1, auto);
     grid-template-rows: repeat(6, auto);
     box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 320px) {
+  .elements {
+    max-width: 320px;
     column-gap: 0;
   }
 }

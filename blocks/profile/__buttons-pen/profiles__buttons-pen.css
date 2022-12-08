@@ -13,6 +13,9 @@
   margin: 0;
   padding: 0;
 }
+.profiles__buttons-pen:hover {
+  opacity: 0.6;
+}
 @media screen and (max-width: 320px) {
   .profiles__buttons-pen {
     width: 18px;

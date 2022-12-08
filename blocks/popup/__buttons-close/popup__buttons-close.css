@@ -11,3 +11,6 @@
   width: 20px;
   height: 20px;
 }
+.popup__buttons-close:hover {
+  opacity: 0.6;
+}
