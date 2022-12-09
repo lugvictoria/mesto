@@ -1,7 +1,7 @@
 .profile {
   max-width: 880px;
   margin: 0 auto;
-  padding-top: 37px;
+  padding-top: 39px;
   padding-bottom: 50px;
 }
 
@@ -15,7 +15,7 @@
   .profile {
     max-width: 320px;
     margin: 0 auto;
-    padding-top: 38.25px;
+    padding-top: 40px;
     padding-bottom: 36px;
   }
 }

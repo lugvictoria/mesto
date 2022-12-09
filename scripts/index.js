@@ -5,7 +5,7 @@ let buttonSave = document.querySelector('.popup__form');
 let popupClose = document.querySelector('.popup__button-close');
 let inputName = document.querySelector('.popup__inputs_name');
 let inputProffession = document.querySelector('.popup__inputs_proffession');
-let gname = document.querySelector('.profile__name');
+let gname = document.querySelector('.profile__title');
 let proffession = document.querySelector('.profile__subtitle');
 
 // функция для открытия popup

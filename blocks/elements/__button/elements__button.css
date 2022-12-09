@@ -1,4 +1,4 @@
-.elements__sign {
+.elements__button {
   background-color: transparent;
   background-image: url("../../../images/heart.svg");
   background-repeat: no-repeat;
@@ -9,13 +9,15 @@
   border-style: none;
   align-self: center;
   cursor: pointer;
+  margin-right: 6px;
+  margin-top: 3px;
 }
 
-.elements__sign:hover {
+.elements__button:hover {
   opacity: 0.5;
 }
 
-.elements__sign:active {
+.elements__button:active {
   background-image: url('../../../images/blackHeart.svg');
   opacity: 1;
 }
