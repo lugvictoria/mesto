@@ -6,7 +6,7 @@
   line-height: 29px;
   color: #000000;
   margin: 0;
-  margin-bottom: 72px;
+  margin-bottom: 30px;
   background-color: white;
 }
 
@@ -15,5 +15,6 @@
     max-width: 238px;
     font-size: 18px;
     line-height: 22px;
+    margin-bottom: 57px;
   }
 }

@@ -7,6 +7,9 @@
   margin: 0 0 0 30px;
   grid-column-start: 1;
   grid-column-end: 2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 320px) {

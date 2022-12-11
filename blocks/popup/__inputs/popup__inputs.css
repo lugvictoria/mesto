@@ -19,3 +19,7 @@
     max-width: 238px;
   }
 }
+
+.popup__inputs:focus {
+  color: blue;
+}
