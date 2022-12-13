@@ -2,13 +2,8 @@ let popup = document.querySelector('.popup');
 let form = document.querySelector('.popup__container');
 let buttonEdit = document.querySelector('.profile__button-edit');
 let popupClose = document.querySelector('.popup__button-close');
-<<<<<<< HEAD
 let inputName = form.querySelector('.popup__input_data_name');
 let inputProfession = form.querySelector('.popup__inputs_data_profession');
-=======
-let inputName = form.querySelector('.popup__inputs_name');
-let inputProfession = form.querySelector('.popup__inputs_profession');
->>>>>>> 56bbe412e202fa440efb559e2f74e36f2015abbc
 let profileTitle = document.querySelector('.profile__title');
 let userProfession = document.querySelector('.profile__subtitle');
 
