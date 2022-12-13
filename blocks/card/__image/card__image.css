@@ -1,16 +1,8 @@
 .card__image {
+  max-width: 282px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   object-position: center;
   width: 100%;
   aspect-ratio: 1 / 1;
 }
-/*
-.place-card__image {
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  max-height: 282px;
-  border-radius: 10px 10px 0px 0px;
-}
-*/
