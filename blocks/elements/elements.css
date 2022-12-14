@@ -12,12 +12,9 @@
 
 @media screen and (max-width: 900px) {
   .elements {
-    display: inline-grid;
     justify-content: space-between;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
-    margin-left: 19px;
-    margin-right: 19px;
     width: 95%;
   }
 }
