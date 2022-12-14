@@ -11,7 +11,7 @@ let userProfession = document.querySelector('.profile__subtitle');
 function openPopup() {
   inputName.value = profileTitle.textContent;
   inputProfession.value = userProfession.textContent;
-  popup.classList.add('popup__opened');
+  popup.classList.add('popup_opened');
 }
 // функция работы с формой
 function formSave(evt) {
@@ -22,7 +22,7 @@ function formSave(evt) {
 }
 // функция для закрытия popup
 function closePopup() {
-  popup.classList.remove('popup__opened');
+  popup.classList.remove('popup_opened');
 }
 
 buttonEdit.addEventListener('click', openPopup);

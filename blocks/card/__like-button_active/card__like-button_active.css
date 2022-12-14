@@ -1,4 +1,4 @@
-.card__like-button_active {
+.card__like-button_active:hover {
   background-image: url('../../../images/blackHeart.svg');
   opacity: 1;
 }
