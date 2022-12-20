@@ -10,18 +10,19 @@
   background-size: cover;
   width: 32px;
   height: 32px;
+  padding: 0;
   cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .popup__button-close {
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    top: -36px;
+  }
 }
 
 .popup__button-close:hover {
   opacity: 0.6;
-}
-
-@media screen and (max-width: 320px) {
-  .popup__button-close {
-    width: 20px;
-    height: 20px;
-    right: 0;
-    top: -36px;
-  }
 }
