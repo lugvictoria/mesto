@@ -17,3 +17,9 @@
     max-width: 246px;
   }
 }
+
+@media screen and (max-width: 319px) {
+  .card__group {
+    margin-left: 10px;
+  }
+}
