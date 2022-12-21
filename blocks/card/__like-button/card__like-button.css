@@ -16,7 +16,4 @@
 
 .card__like-button:hover {
   opacity: 0.5;
-  width: 35px;
-  height: 44px;
-  margin-right: 0;
 }
