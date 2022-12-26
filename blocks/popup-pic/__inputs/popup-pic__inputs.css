@@ -1,0 +1,26 @@
+.popup-pic__inputs {
+  max-width: 358px;
+  width: 100%;
+  margin-bottom: 30px;
+  outline: 0;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 0 8px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup-pic__inputs:focus {
+  color: blue;
+}
+
+@media screen and (max-width: 550px) {
+  .popup-pic__inputs {
+    max-width: 238px;
+    padding: 0 0 9px 0;
+    margin-bottom: 28px;
+  }
+}

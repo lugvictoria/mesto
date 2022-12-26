@@ -27,48 +27,16 @@
       </div>
     </section>
     <section class="elements">
-      <article class="card">
-        <img src="images/karach.jpg" class="card__image" alt="Карачаевск">
-        <div class="card__group">
-          <h2 class="card__title">Карачаевск</h2>
-          <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="images/elbrus.jpg" class="card__image" alt="Гора Эльбрус">
-        <div class="card__group">
-          <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="images/donbai.jpg" class="card__image" alt="Домбай">
-        <div class="card__group">
-          <h2 class="card__title">Домбай</h2>
-          <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="images/baikal.jpg" class="card__image" alt="Байкал">
-        <div class="card__group">
-          <h2 class="card__title">Байкал</h2>
-          <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="images/river_lena.jpg" class="card__image" alt="Река Лена">
-        <div class="card__group">
-          <h2 class="card__title">Река Лена</h2>
-          <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="images/ozero_altai.jpg" class="card__image" alt="Гейзерное озеро Алтай">
-        <div class="card__group">
-          <h2 class="card__title">Озеро Алтай</h2>
-          <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
-        </div>
-      </article>
+      <template id="template">
+        <article class="card">
+          <img src="images/karach.jpg" class="card__image" alt="Карачаевск">
+          <button class="place-card__buttons-delete" type="button"></button>
+          <div class="card__group">
+            <h2 class="card__title">Карачаевск</h2>
+            <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
+          </div>
+        </article>
+      </template>
     </section>
   </main>
   <footer class="footer">
@@ -84,6 +52,17 @@
         <input type="text" class="popup__inputs popup__inputs_data_profession" placeholder="Введите профессию"
           name="profession" required>
         <button class="popup__button-save" type="submit" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup-pic">
+    <div class="popup-pic__container">
+      <button class="popup-pic__button-close" type="button" aria-label="Закрыть"></button>
+      <h2 class="popup-pic__title">Новое место</h2>
+      <form class="popup-pic__form" name="formPic">
+        <input type="text" class="popup-pic__inputs" placeholder="Название" name="name-place" required>
+        <input type="text" class="popup-pic__inputs" placeholder="Ссылка на картинку" name="picture" required>
+        <button class="popup-pic__button-create" type="submit" aria-label="Создать">Создать</button>
       </form>
     </div>
   </div>

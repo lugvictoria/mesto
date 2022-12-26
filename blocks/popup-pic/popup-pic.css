@@ -1,0 +1,17 @@
+.popup-pic {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: -12px;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 320px) {
+  .popup-pic {
+    top: -34px;
+  }
+}
