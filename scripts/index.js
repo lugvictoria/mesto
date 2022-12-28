@@ -7,40 +7,13 @@ let inputProfession = form.querySelector('.popup__inputs_data_profession');
 let profileTitle = document.querySelector('.profile__title');
 let userProfession = document.querySelector('.profile__subtitle');
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  },
-];
-
 // функция для открытия popup
 function openPopup() {
   inputName.value = profileTitle.textContent;
   inputProfession.value = userProfession.textContent;
   popup.classList.add('popup_opened');
 }
-// функция работы с формой
+// функция работы с формой введения данных в профиль
 function formSave(evt) {
   evt.preventDefault();
   profileTitle.textContent = inputName.value;
@@ -55,6 +28,8 @@ function closePopup() {
 buttonEdit.addEventListener('click', openPopup);
 form.addEventListener('submit', formSave);
 popupClose.addEventListener('click', closePopup);
+
+// открытие popup для внесения данных в карточку места
 
 let popupPic = document.querySelector('.popup-pic');
 let formPic = document.querySelector('.popup-pic__container');
@@ -75,3 +50,31 @@ function closePopupPic() {
 
 buttonAdd.addEventListener('click', openPopupPic);
 popupClosePic.addEventListener('click', closePopupPic);
+// создание карточек
+
+const cardContainer = document.querySelector('.elements');
+const userTemplate = document.querySelector('#template').content;
+
+// отрисовка массива
+initialCards.forEach(object => {
+  const elementCard = userTemplate.querySelector('.card').cloneNode(true);
+
+  elementCard.querySelector('.card__image').alt = '$(name).';
+  elementCard.querySelector('.card__image').src = object.link;
+  elementCard.querySelector('.card__title').textContent = object.name;
+  return cardContainer.prepend(elementCard);
+});
+/*
+let buttonLike = elementCard.querySelector('.card__like-button');
+function like() {
+  const buttonLike = elementCard.querySelector('.card__like-button');
+  buttonLike.classList.toggle('card__like-button_active');
+}
+buttonLike.addEventListener('click', like);*/
+
+
+
+
+
+
+

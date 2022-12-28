@@ -1,7 +1,7 @@
 .elements {
   display: grid;
   max-width: 880px;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
   box-sizing: border-box;
   column-gap: 17px;
