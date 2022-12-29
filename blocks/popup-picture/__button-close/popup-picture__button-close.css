@@ -1,4 +1,4 @@
-.popup-pic__button-close {
+.popup-picture__button-close {
   position: absolute;
   right: -38px;
   top: -38px;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  .popup-pic__button-close {
+  .popup-picture__button-close {
     width: 20px;
     height: 20px;
     right: 0px;
@@ -23,6 +23,6 @@
   }
 }
 
-.popup-pic__button-close:hover {
+.popup-picture__button-close:hover {
   opacity: 0.6;
 }

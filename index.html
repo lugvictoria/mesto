@@ -42,7 +42,7 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <div class="popup" id="popup_profile-edit">
     <div class="popup__container">
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
@@ -55,7 +55,26 @@
       </form>
     </div>
   </div>
-  <div class="popup-pic">
+  <div class="popup" id="popup_card-add">
+    <div class="popup__container">
+      <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__form" name="formPic">
+        <input type="text" class="popup__inputs  popup__inputs_data_name" placeholder="Название" name="name" required>
+        <input type="text" class="popup__inputs popup__inputs_data_profession" placeholder="Ссылка на картинку"
+          name="profession" required>
+        <button class="popup__button-save" type="submit" aria-label="Создать">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup-picture">
+    <div class="popup-picture__container">
+      <button class="popup-picture__button-close" type="button"></button>
+      <img src="images/baikal.jpg" alt="Байкал" class="popup-picture__image">
+      <h2 class="popup-picture__title">Байкал</h2>
+    </div>
+  </div>
+  <!--  <div class="popup-pic" id="popup_card-add">
     <div class="popup-pic__container">
       <button class="popup-pic__button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup-pic__title">Новое место</h2>
@@ -65,7 +84,7 @@
         <button class="popup-pic__button-create" type="submit" aria-label="Создать">Создать</button>
       </form>
     </div>
-  </div>
+  </div>--->
   <script src="./scripts/listplace.js"></script>
   <script src="./scripts/index.js"></script>
 </body>

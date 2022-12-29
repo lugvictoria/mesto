@@ -1,4 +1,4 @@
-.popup-pic {
+.popup-picture {
   display: flex;
   visibility: hidden;
   opacity: 0;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .popup-pic {
+  .popup-picture {
     top: -34px;
   }
 }
