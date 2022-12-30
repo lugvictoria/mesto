@@ -30,7 +30,7 @@
       <template id="template">
         <article class="card">
           <img src="images/baikal.jpg" class="card__image" alt="Байкал">
-          <button class="card__delete-button" type="button"></button>
+          <button class="card__delete-button" type="button" aria-label="Иконка удаления"></button>
           <div class="card__group">
             <h2 class="card__title">Байкал</h2>
             <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
@@ -61,7 +61,7 @@
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form" name="formPic">
         <input type="text" class="popup__inputs  popup__inputs_data_name" placeholder="Название" name="name" required>
-        <input type="text" class="popup__inputs popup__inputs_data_profession" placeholder="Ссылка на картинку"
+        <input type="text" class="popup__inputs  popup__inputs_data_profession" placeholder="Ссылка на картинку"
           name="profession" required>
         <button class="popup__button-save" type="submit" aria-label="Создать">Создать</button>
       </form>
@@ -69,7 +69,7 @@
   </div>
   <div class="popup-picture">
     <div class="popup-picture__container">
-      <button class="popup-picture__button-close" type="button"></button>
+      <button class="popup-picture__button-close" type="button" aria-label="Закрыть"></button>
       <img src="images/baikal.jpg" alt="Байкал" class="popup-picture__image">
       <h2 class="popup-picture__title">Байкал</h2>
     </div>
