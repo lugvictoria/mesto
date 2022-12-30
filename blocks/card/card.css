@@ -4,6 +4,7 @@
   background-color: white;
   border-radius: 10px;
   box-sizing: border-box;
+  position: relative;
 }
 
 @media screen and (max-width: 1279px) {
@@ -28,21 +29,3 @@
   }
 }
 
-.card__delete-button {
-  background-color: rgba(255, 255, 255, 0);
-  background-image: url('../../../images/Trash.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 18px;
-  height: 19px;
-  border-style: none;
-  align-self: center;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.card__delete-button:hover {
-  cursor: pointer;
-  opacity: .5;
-}

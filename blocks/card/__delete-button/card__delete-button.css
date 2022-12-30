@@ -1,15 +1,17 @@
 .card__delete-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   background-color: rgba(255, 255, 255, 0);
-  background-image: url('../../../images/bin.svg');
+  background-image: url('../../../images/Trash.svg');
   background-position: center;
   background-repeat: no-repeat;
   width: 18px;
   height: 19px;
   border-style: none;
   align-self: center;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  padding: 0;
+  z-index: 3;
 }
 
 .card__delete-button:hover {
