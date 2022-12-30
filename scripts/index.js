@@ -48,10 +48,11 @@ const profileSubtitle = document.querySelector('.profile__subtitle');
 const buttonDelete = document.querySelector('.card__delete-button');
 
 
-// отрисовка массива
+// воссоздание массива initialCards
+
 initialCards.forEach(object => {
   const elementCard = userTemplate.querySelector('.card').cloneNode(true);
-
+  createCard(elementCard);
   elementCard.querySelector('.card__image').alt = '$(name).';
   elementCard.querySelector('.card__image').src = object.link;
   elementCard.querySelector('.card__title').textContent = object.name;
@@ -81,6 +82,7 @@ function openPopupEditProfile() {
 buttonEdit.addEventListener('click', openPopupEditProfile);
 
 // функция открытие popupAddCard
+
 function openPopupAddCard() {
   openPopup(popupAddCard);
   const popupButtonSave = popupAddCard.querySelector('.popup__form');
@@ -115,20 +117,22 @@ function createCard(card) {
   buttonLike.addEventListener('click', like);
   const cardImage = card.querySelector('.card__image');
   function openPopupImage() {
-    document.querySelector('.popup-image__image').src = card.querySelector('.card__image').src;
-    document.querySelector('.popup-image__subtitle').textContent = card.querySelector('.card__title').textContent;
-    let popupImage = document.querySelector('.popup-image');
-    popupImage.classList.toggle('popup-image_opened');
-    const buttonClosePopupImage = document.querySelector('.popup-image__buttons-close');
+    document.querySelector('.popup-picture__image').src = card.querySelector('.card__image').src;
+    document.querySelector('.popup-picture__title').textContent = card.querySelector('.card__title').textContent;
+    let popupImage = document.querySelector('.popup-picture');
+    popupImage.classList.toggle('popup-picture_opened');
+    const buttonClosePopupImage = document.querySelector('.popup-picture__button-close');
     buttonClosePopupImage.addEventListener('click', () => {
-      popupImage.classList.remove('popup-image_opened');
+      popupImage.classList.remove('popup-picture_opened');
     });
   }
   cardImage.addEventListener('click', openPopupImage);
-  const buttonDelete = card.querySelector('.place-card__buttons-delete');
+  const buttonDelete = card.querySelector('.card__delete-button');
   function removeCard() {
     card.remove();
   }
   buttonDelete.addEventListener('click', removeCard);
   return card;
 }
+
+
