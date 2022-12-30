@@ -7,14 +7,14 @@ let inputProfession = form.querySelector('.popup__inputs_data_profession');
 const profileTitle = document.querySelector('.profile__title');
 let userProfession = document.querySelector('.profile__subtitle');
 
-// функция для открытия popup
+// функция для открытия popup (нескольких)
 function openPopup(popup) {
   inputName.value = profileTitle.textContent;
   inputProfession.value = userProfession.textContent;
   popup.classList.add('popup_opened');
 }
 
-// функция для закрытия popup
+// функция для закрытия popup (нескольких)
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
@@ -32,14 +32,12 @@ form.addEventListener('submit', formSave);
 popupClose.addEventListener('click', closePopup);
 
 // открытие popup для внесения данных в карточку места
-
 let popupPic = document.querySelector('.popup-pic');
 let formPic = document.querySelector('.popup-pic__container');
 let popupClosePic = document.querySelector('.popup-pic__button-close');
 const buttonAdd = document.querySelector('.profile__button-add');
 
 // создание карточек
-
 const popupEditProfile = document.querySelector('#popup_profile-edit');
 const popupAddCard = document.querySelector('#popup_card-add');
 const cardContainer = document.querySelector('.elements');
@@ -47,9 +45,7 @@ const userTemplate = document.querySelector('#template').content;
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const buttonDelete = document.querySelector('.card__delete-button');
 
-
 // воссоздание массива initialCards
-
 initialCards.forEach(object => {
   const elementCard = userTemplate.querySelector('.card').cloneNode(true);
   createCard(elementCard);
@@ -82,7 +78,6 @@ function openPopupEditProfile() {
 buttonEdit.addEventListener('click', openPopupEditProfile);
 
 // функция открытие popupAddCard
-
 function openPopupAddCard() {
   openPopup(popupAddCard);
   const popupButtonSave = popupAddCard.querySelector('.popup__form');
@@ -108,6 +103,7 @@ function openPopupAddCard() {
 }
 buttonAdd.addEventListener('click', openPopupAddCard);
 
+// функция createCard и функция поставить лайк внутри
 function createCard(card) {
   let buttonLike = card.querySelector('.card__like-button');
   function like() {
