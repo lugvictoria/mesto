@@ -27,10 +27,6 @@ function formSave(evt) {
   closePopup();
 }
 
-buttonEdit.addEventListener('click', openPopup);
-form.addEventListener('submit', formSave);
-popupClose.addEventListener('click', closePopup);
-
 // открытие popup для внесения данных в карточку места
 let popupPic = document.querySelector('.popup-pic');
 let formPic = document.querySelector('.popup-pic__container');
@@ -45,6 +41,10 @@ const userTemplate = document.querySelector('#template').content;
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const buttonDelete = document.querySelector('.card__delete-button');
 
+buttonEdit.addEventListener('click', openPopup);
+form.addEventListener('submit', formSave);
+popupClose.addEventListener('click', closePopup);
+
 // воссоздание массива initialCards
 initialCards.forEach(object => {
   const elementCard = userTemplate.querySelector('.card').cloneNode(true);
@@ -57,9 +57,9 @@ initialCards.forEach(object => {
 
 // функция открытия popupEditProfile
 function openPopupEditProfile() {
-  const popupButtonClose = popupEditProfile.querySelector('.popup__button-close');
-  const popupButtonSave = popupEditProfile.querySelector('.popup__form');
   openPopup(popupEditProfile);
+  const popupButtonSave = popupEditProfile.querySelector('.popup__form');
+  const popupButtonClose = popupEditProfile.querySelector('.popup__button-close');
   const inputName = popupEditProfile.querySelector('.popup__inputs_data_name');
   const inputHobby = popupEditProfile.querySelector('.popup__inputs_data_profession');
   inputName.value = profileTitle.textContent;
@@ -131,5 +131,3 @@ function createCard(card) {
 
   return card;
 }
-
-
