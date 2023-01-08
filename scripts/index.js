@@ -89,8 +89,7 @@ function openPopupAddCard() {
     card.querySelector('.card__image').alt = 'изображение' + inputName.value;
     inputName.value = '';
     inputProfession.value = '';
-    const firstChild = cardContainer.firstChild;
-    cardContainer.insertBefore(card, firstChild);
+    cardContainer.prepend(card);
     closePopup(popupAddCard);
   });
 }
