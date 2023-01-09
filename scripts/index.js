@@ -19,8 +19,8 @@ const newCardTitle = newCardPopup.querySelector('.popup__inputs_place_name');
 const newCardLink = newCardPopup.querySelector('.popup__inputs_place_link');
 
 const imagePopup = document.getElementById('popup-picture');
-const imagePopupFigure = imagePopup.querySelector('.popup-picture__image');
-const imagePopupCaption = imagePopup.querySelector('.popup-picture__title');
+const imagePopupFigure = imagePopup.querySelector('.popup__picture-image');
+const imagePopupCaption = imagePopup.querySelector('.popup__picture-title');
 
 const popupCloseButtons = document.querySelectorAll('.popup__button-close');
 
