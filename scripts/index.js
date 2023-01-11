@@ -18,11 +18,14 @@ const newCardSaveButton = newCardPopup.querySelector('.popup__button-save');
 const newCardTitle = newCardPopup.querySelector('.popup__inputs_place_name');
 const newCardLink = newCardPopup.querySelector('.popup__inputs_place_link');
 
-const imagePopup = document.getElementById('popup-picture');
+const imagePopup = document.getElementById('popup__picture');
 const imagePopupFigure = imagePopup.querySelector('.popup__picture-image');
 const imagePopupCaption = imagePopup.querySelector('.popup__picture-title');
 
-const popupCloseButtons = document.querySelectorAll('.popup__button-close');
+//  кнопки закрытия popup'ов
+const profileCloseButton = profileEditPopup.querySelector('.popup__button-close');
+const newCardCloseButton = newCardPopup.querySelector('.popup__button-close');
+const imageCloseButton = imagePopup.querySelector('.popup__button-close');
 
 /** Функция добавляет карточку/карточки на страницу
  *
@@ -77,8 +80,8 @@ function openPopup(popup) {
 }
 
 /** Функция закрывает текущий попап */
-function closePopup(event) {
-  event.target.closest('.popup').classList.remove('popup_opened');
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 }
 
 /** Функция сохраняет введенные данные и закрывает попап */
@@ -86,7 +89,7 @@ function saveProfileInfo(event) {
   event.preventDefault();
   profileName.textContent = profileNameInput.value;
   profileJob.textContent = profileJobInput.value;
-  closePopup(event);
+  closePopup(profileEditPopup);
 }
 
 /** Функция сохраняет введенные данные и закрывает попап */
@@ -97,7 +100,7 @@ function saveNewCard(event) {
     link: newCardLink.value
   };
   renderCards(cardsContainer, card);
-  closePopup(event);
+  closePopup(newCardPopup);
   newCardForm.reset();
 }
 
@@ -123,7 +126,16 @@ newCardButton.addEventListener('click', function () {
 
 newCardForm.addEventListener('submit', saveNewCard);
 
-popupCloseButtons.forEach(button => button.addEventListener('click', closePopup));
+imageCloseButton.addEventListener('click', () => {
+  closePopup(imagePopup);
+});
+profileCloseButton.addEventListener('click', () => {
+  closePopup(profileEditPopup);
+});
+newCardCloseButton.addEventListener('click', () => {
+  closePopup(newCardPopup);
+});
 
 /** Отобразить исходные карточки при загрузке страницы */
 renderCards(cardsContainer, ...initialCards);
+
