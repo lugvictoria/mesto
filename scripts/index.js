@@ -28,6 +28,7 @@ const newCardCloseButton = newCardPopup.querySelector('.popup__button-close');
 const imageCloseButton = imagePopup.querySelector('.popup__button-close');
 
 const buttonCloseList = document.querySelectorAll('.popup__button-close');
+const popups = document.querySelectorAll('.popup');
 
 /** Функция добавляет карточку/карточки на страницу
  *
@@ -79,11 +80,20 @@ function deleteCard(event) {
 /** Функция открывает нужный попап */
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupByKey);
 }
 
 /** Функция закрывает текущий попап */
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+}
+
+/** Обработчик для закрытия попапов по кнопке Esc */
+function closePopupByKey(evt) {
+  if (evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
+  }
 }
 
 /** Функция сохраняет введенные данные и закрывает попап */
@@ -117,7 +127,9 @@ function showImagePopup(event) {
 /** Обработчики событий */
 profileEditButton.addEventListener('click', function () {
   profileNameInput.value = profileName.textContent;
+  profileNameInput.dispatchEvent(new Event('input'));
   profileJobInput.value = profileJob.textContent;
+  profileJobInput.dispatchEvent(new Event('input'));
   openPopup(profileEditPopup);
 });
 profileEditForm.addEventListener('submit', saveProfileInfo);
@@ -127,22 +139,17 @@ newCardButton.addEventListener('click', function () {
 });
 
 newCardForm.addEventListener('submit', saveNewCard);
-/*
-imageCloseButton.addEventListener('click', () => {
-  closePopup(imagePopup);
-});
-profileCloseButton.addEventListener('click', () => {
-  closePopup(profileEditPopup);
-});
-newCardCloseButton.addEventListener('click', () => {
-  closePopup(newCardPopup);
-});*/
 
 buttonCloseList.forEach(btn => {
   const popup = btn.closest('.popup');
   btn.addEventListener('click', () => closePopup(popup));
 })
 
+popups.forEach(popup => {
+  popup.addEventListener('mousedown', evt => {
+    if (evt.target === evt.currentTarget) closePopup(evt.target);
+  });
+});
+
 /** Отобразить исходные карточки при загрузке страницы */
 renderCards(cardsContainer, ...initialCards);
-
