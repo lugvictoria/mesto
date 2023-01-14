@@ -27,7 +27,7 @@
       </div>
     </section>
     <section class="elements">
-      <!-- Шаблон карточки для генерации -->
+  <!-- Шаблон карточки для генерации -->
       <template id="cards">
         <article class="card">
           <img src="#" class="card__image" alt="#">
@@ -43,31 +43,68 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
+  <!-- Popups -->
+
+  <!-- Popup: редактировать профиль -->
   <div class="popup" id="popup_profile-edit">
     <div class="popup__container">
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="form_profile-edit">
-        <input type="text" class="popup__input popup__input_data_name" placeholder="Введите имя и фамилию" name="name"
+      <form class="popup__form" name="form_profile-edit" novalidate>
+        <input
+          id="name-input"
+          type="text"
+          class="popup__input popup__input_data_name"
+          placeholder="Введите имя и фамилию"
+          name="name"
+          minlength="2"
+          maxlength="40"
           required>
-        <input type="text" class="popup__input popup__input_data_profession" placeholder="Введите профессию"
-          name="profession" required>
+        <span class="popup__input-error name-input-error"></span>
+        <input
+          id="job-input"
+          type="text"
+          class="popup__input popup__input_data_profession"
+          placeholder="Введите профессию"
+          name="profession"
+          minlength="2"
+          maxlength="200"
+          required>
+        <span class="popup__input-error job-input-error"></span>
         <button class="popup__save-button" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
     </div>
   </div>
+
+  <!-- Popup: Создание новой карточки места -->
   <div class="popup" id="popup_card-add">
     <div class="popup__container">
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form" name="form_card-add">
-        <input type="text" class="popup__input  popup__input_place_name" placeholder="Название" name="name" required>
-        <input type="url" class="popup__input  popup__input_place_link" placeholder="Ссылка на картинку"
-          name="profession" required>
+      <form class="popup__form" name="form_card-add" novalidate>
+        <input
+          id="title-input"
+          type="text"
+          class="popup__input  popup__input_place_name"
+          placeholder="Название"
+          name="title"
+          minlength="2"
+          maxlength="30" required>
+        <span class="popup__input-error title-input-error"></span>
+        <input
+          id="link-input"
+          type="url"
+          class="popup__input  popup__input_place_link"
+          placeholder="Ссылка на картинку"
+          name="link"
+          required>
+          <span class="popup__input-error link-input-error"></span>
         <button class="popup__save-button" type="submit" aria-label="Создать">Создать</button>
       </form>
     </div>
   </div>
+
+  <!-- Popup: Увеличение изображения места -->
   <div class="popup popup_picture" id="popup__picture">
     <div class="popup__picture-container">
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
@@ -78,6 +115,7 @@
 
   <script src="./scripts/listplace.js"></script>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 
 </html>

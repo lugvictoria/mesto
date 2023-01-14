@@ -14,19 +14,15 @@ const profileJobInput = profileEditPopup.querySelector('.popup__input_data_profe
 
 const newCardPopup = document.getElementById('popup_card-add');
 const newCardForm = newCardPopup.querySelector('.popup__form');
-const newCardSaveButton = newCardPopup.querySelector('.popup__save-button');
 const newCardTitle = newCardPopup.querySelector('.popup__input_place_name');
 const newCardLink = newCardPopup.querySelector('.popup__input_place_link');
+const newCardSaveButton = newCardPopup.querySelector('.popup__save-button');
 
 const imagePopup = document.getElementById('popup__picture');
 const imagePopupFigure = imagePopup.querySelector('.popup__picture-image');
 const imagePopupCaption = imagePopup.querySelector('.popup__picture-title');
 
 //  кнопки закрытия popup'ов
-const profileCloseButton = profileEditPopup.querySelector('.popup__button-close');
-const newCardCloseButton = newCardPopup.querySelector('.popup__button-close');
-const imageCloseButton = imagePopup.querySelector('.popup__button-close');
-
 const buttonCloseList = document.querySelectorAll('.popup__button-close');
 const popups = document.querySelectorAll('.popup');
 
@@ -83,16 +79,22 @@ function openPopup(popup) {
   document.addEventListener('keydown', closePopupByKey);
 }
 
-/** Функция закрывает текущий попап */
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-}
-
 /** Обработчик для закрытия попапов по кнопке Esc */
 function closePopupByKey(evt) {
   if (evt.key === 'Escape') {
     const popup = document.querySelector('.popup_opened');
     closePopup(popup);
+  }
+}
+
+/** Функция закрывает нужный попап */
+function closePopup(popup) {
+  const submitButtonElement = popup.querySelector('.popup__save-button');
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupByKey);
+  if (submitButtonElement) {
+    submitButtonElement.classList.add('popup__save-button_disabled');
+    submitButtonElement.disabled = true;
   }
 }
 
