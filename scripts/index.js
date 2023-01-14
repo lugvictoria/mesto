@@ -27,6 +27,8 @@ const profileCloseButton = profileEditPopup.querySelector('.popup__button-close'
 const newCardCloseButton = newCardPopup.querySelector('.popup__button-close');
 const imageCloseButton = imagePopup.querySelector('.popup__button-close');
 
+const buttonCloseList = document.querySelectorAll('.popup__button-close');
+
 /** Функция добавляет карточку/карточки на страницу
  *
  * Аргументы:
@@ -125,7 +127,7 @@ newCardButton.addEventListener('click', function () {
 });
 
 newCardForm.addEventListener('submit', saveNewCard);
-
+/*
 imageCloseButton.addEventListener('click', () => {
   closePopup(imagePopup);
 });
@@ -134,7 +136,12 @@ profileCloseButton.addEventListener('click', () => {
 });
 newCardCloseButton.addEventListener('click', () => {
   closePopup(newCardPopup);
-});
+});*/
+
+buttonCloseList.forEach(btn => {
+  const popup = btn.closest('.popup');
+  btn.addEventListener('click', () => closePopup(popup));
+})
 
 /** Отобразить исходные карточки при загрузке страницы */
 renderCards(cardsContainer, ...initialCards);
