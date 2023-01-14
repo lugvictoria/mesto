@@ -9,14 +9,14 @@ const cardTemplate = document.getElementById('cards').content;
 
 const profileEditPopup = document.getElementById('popup_profile-edit');
 const profileEditForm = profileEditPopup.querySelector('.popup__form');
-const profileNameInput = profileEditPopup.querySelector('.popup__inputs_data_name');
-const profileJobInput = profileEditPopup.querySelector('.popup__inputs_data_profession');
+const profileNameInput = profileEditPopup.querySelector('.popup__input_data_name');
+const profileJobInput = profileEditPopup.querySelector('.popup__input_data_profession');
 
 const newCardPopup = document.getElementById('popup_card-add');
 const newCardForm = newCardPopup.querySelector('.popup__form');
-const newCardSaveButton = newCardPopup.querySelector('.popup__button-save');
-const newCardTitle = newCardPopup.querySelector('.popup__inputs_place_name');
-const newCardLink = newCardPopup.querySelector('.popup__inputs_place_link');
+const newCardSaveButton = newCardPopup.querySelector('.popup__save-button');
+const newCardTitle = newCardPopup.querySelector('.popup__input_place_name');
+const newCardLink = newCardPopup.querySelector('.popup__input_place_link');
 
 const imagePopup = document.getElementById('popup__picture');
 const imagePopupFigure = imagePopup.querySelector('.popup__picture-image');

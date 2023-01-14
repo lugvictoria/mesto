@@ -1,4 +1,4 @@
-.popup__inputs {
+.popup__input {
   max-width: 358px;
   width: 100%;
   margin-bottom: 27px;
@@ -14,12 +14,12 @@
   justify-content: left;
 }
 
-.popup__inputs:focus {
+.popup__input:focus {
   opacity: 0.7;
 }
 
 @media screen and (max-width: 550px) {
-  .popup__inputs {
+  .popup__input {
     max-width: 238px;
     padding: 0 0 9px 0;
     margin-bottom: 28px;
