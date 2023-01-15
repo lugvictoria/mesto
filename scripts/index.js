@@ -7,6 +7,7 @@ const newCardButton = document.querySelector('.profile__button-add');
 const cardsContainer = document.querySelector('.elements');
 const cardTemplate = document.getElementById('cards').content;
 
+
 const profileEditPopup = document.getElementById('popup_profile-edit');
 const profileEditForm = profileEditPopup.querySelector('.popup__form');
 const profileNameInput = profileEditPopup.querySelector('.popup__input_data_name');
@@ -50,14 +51,15 @@ function renderCards(container, ...cards) {
 function getNewCard(name, link) {
   // Создание элемента из шаблона
   const card = cardTemplate.querySelector('.card').cloneNode(true);
-
+  const cardImage = card.querySelector('.card__image');
   // Заполнение содержимого
-  card.querySelector('.card__image').src = link;
-  card.querySelector('.card__image').alt = name;
+  cardImage.src = link;
+  cardImage.alt = name;
   card.querySelector('.card__title').textContent = name;
 
   // Обработчики нажатий
-  card.querySelector('.card__image').addEventListener('click', showImagePopup);
+  cardImage.addEventListener('click', () => showImagePopup(name, link));
+
   card.querySelector('.card__like-button').addEventListener('click', likeCard);
   card.querySelector('.card__delete-button').addEventListener('click', deleteCard);
 
@@ -92,10 +94,6 @@ function closePopupByKey(evt) {
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupByKey);
-  if (submitButtonElement) {
-    submitButtonElement.classList.add('popup__save-button_disabled');
-    submitButtonElement.disabled = true;
-  }
 }
 
 /** Функция сохраняет введенные данные и закрывает попап */
@@ -119,10 +117,10 @@ function saveNewCard(event) {
 }
 
 /** Функция открывает попап с увеличенной картинкой */
-function showImagePopup(event) {
-  imagePopupFigure.src = event.target.src;
-  imagePopupFigure.alt = event.target.alt;
-  imagePopupCaption.textContent = event.target.closest('.card').querySelector('.card__title').textContent;
+function showImagePopup(name, link) {
+  imagePopupFigure.src = link;
+  imagePopupFigure.alt = name;
+  imagePopupCaption.textContent = name;
   openPopup(imagePopup);
 }
 
