@@ -12,6 +12,7 @@
   margin-right: 6px;
   margin-top: 3px;
   opacity: 1;
+  transition: opacity .2s;
 }
 
 .card__like-button:hover {

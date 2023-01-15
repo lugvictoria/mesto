@@ -28,18 +28,27 @@
     </section>
     <section class="elements">
   <!-- Шаблон карточки для генерации -->
-      <template id="cards">
-        <article class="card">
-          <img src="#" class="card__image" alt="#">
-          <button class="card__delete-button" type="button" aria-label="Иконка удаления"></button>
-          <div class="card__group">
-            <h2 class="card__title">Байкал</h2>
-            <button class="card__like-button" type="button" aria-label="Лайк Сердечко"></button>
-          </div>
-        </article>
-      </template>
-    </section>
-  </main>
+  <template id="cards">
+    <div class="card">
+      <img
+        src="#"
+        alt="#"
+        class="card__image">
+      <div class="card__group">
+        <h2 class="card__title">#</h2>
+        <button
+          type="button"
+          class="card__like-button"
+          aria-label="Добавить в избранное"></button>
+      </div>
+      <button
+        type="button"
+        class="card__delete-button"
+        aria-label="Удалить"></button>
+    </div>
+  </template>
+</section>
+</main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
