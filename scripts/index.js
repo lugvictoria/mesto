@@ -26,6 +26,7 @@ const imagePopupCaption = imagePopup.querySelector('.popup__picture-title');
 const buttonCloseList = document.querySelectorAll('.popup__button-close');
 const popups = document.querySelectorAll('.popup');
 
+
 /** Функция добавляет карточку/карточки на страницу
  *
  * Аргументы:
@@ -89,7 +90,6 @@ function closePopupByKey(evt) {
 
 /** Функция закрывает нужный попап */
 function closePopup(popup) {
-  const submitButtonElement = popup.querySelector('.popup__save-button');
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupByKey);
   if (submitButtonElement) {
@@ -132,11 +132,14 @@ profileEditButton.addEventListener('click', function () {
   profileNameInput.dispatchEvent(new Event('input'));
   profileJobInput.value = profileJob.textContent;
   profileJobInput.dispatchEvent(new Event('input'));
+  const submitButtonElement = profileEditPopup.querySelector('.popup__save-button');
   openPopup(profileEditPopup);
 });
 profileEditForm.addEventListener('submit', saveProfileInfo);
 
 newCardButton.addEventListener('click', function () {
+  newCardForm.reset();
+  const submitButtonElement = newCardPopup.querySelector('.popup__save-button');
   openPopup(newCardPopup);
 });
 
