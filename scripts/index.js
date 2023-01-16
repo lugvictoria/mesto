@@ -113,6 +113,9 @@ function saveNewCard(event) {
   };
   renderCards(cardsContainer, card);
   closePopup(newCardPopup);
+  const button = event.submitter;
+  button.disabled = true;
+  button.classList.add('popup__save-button_disabled');
   newCardForm.reset();
 }
 
