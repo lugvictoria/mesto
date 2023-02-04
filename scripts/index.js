@@ -31,7 +31,6 @@ const popups = document.querySelectorAll('.popup');
 
 const formValidators = {}; // Экземпляры класса FormValidator, чтобы снаружи обращаться к их методам
 
-
 /** Функция открывает нужный попап */
 export function openPopup (popup) {
   popup.classList.add('popup_opened');
@@ -69,14 +68,11 @@ function saveNewCard (event) {
     link: newCardLink.value
   };
 
-
   renderCard(cardsContainer, card);
   closePopup(newCardPopup);
   newCardForm.reset();
   formValidators[newCardForm.name].disableButtonState();
 }
-
-
 
 /** Обработчки событий */
 profileEditButton.addEventListener('click', function () {
@@ -103,7 +99,6 @@ popups.forEach( popup => {
     if (evt.target === evt.currentTarget) closePopup(evt.target);
   });
 });
-
 
 /** Функция добавляет карточку на страницу
  *
