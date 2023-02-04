@@ -1,3 +1,7 @@
+import initialCards from './initialCards.js';
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
+
 /** Элементы страницы */
 const profileEditButton = document.querySelector('.profile__button-edit');
 const profileName = document.querySelector('.profile__title');
@@ -5,8 +9,6 @@ const profileJob = document.querySelector('.profile__subtitle');
 
 const newCardButton = document.querySelector('.profile__button-add');
 const cardsContainer = document.querySelector('.elements');
-const cardTemplate = document.getElementById('cards').content;
-
 
 const profileEditPopup = document.getElementById('popup_profile-edit');
 const profileEditForm = profileEditPopup.querySelector('.popup__form');
@@ -19,143 +21,133 @@ const newCardTitle = newCardPopup.querySelector('.popup__input_place_name');
 const newCardLink = newCardPopup.querySelector('.popup__input_place_link');
 const newCardSaveButton = newCardPopup.querySelector('.popup__save-button');
 
-const imagePopup = document.getElementById('popup__picture');
-const imagePopupFigure = imagePopup.querySelector('.popup__picture-image');
-const imagePopupCaption = imagePopup.querySelector('.popup__picture-title');
+export const imagePopup = document.getElementById('popup__picture');
+export const imagePopupFigure = imagePopup.querySelector('.popup__picture-image');
+export const imagePopupCaption = imagePopup.querySelector('.popup__picture-title');
 
 //  кнопки закрытия popup'ов
-const buttonCloseList = document.querySelectorAll('.popup__button-close');
+const popupCloseButtons = document.querySelectorAll('.popup__button-close');
 const popups = document.querySelectorAll('.popup');
 
+const formValidators = {}; // Экземпляры класса FormValidator, чтобы снаружи обращаться к их методам
 
-/** Функция добавляет карточку/карточки на страницу
- *
- * Аргументы:
- * - контейнер для вставки,
- * - один или несколько объектов с карточкой (при вставке массива с объектами использовать spread-оператор, например: ...arrayOfObjects)
- *
- * Ожидаемый формат объекта карточки:
- * {  name: Строка с именем объекта (заголовок карточки),
- *    link: Строка с полным адресом изображения   }
- *
- * Шаблон карточки для генерации:
- * блок <template id="cards">
- */
-function renderCards(container, ...cards) {
-  cards.forEach(card => {
-    container.prepend(getNewCard(card.name, card.link));
-  });
-}
-
-/** Функция создает из шаблона элемент с новой карточкой и возвращает его */
-function getNewCard(name, link) {
-  // Создание элемента из шаблона
-  const card = cardTemplate.querySelector('.card').cloneNode(true);
-  const cardImage = card.querySelector('.card__image');
-  // Заполнение содержимого
-  cardImage.src = link;
-  cardImage.alt = name;
-  card.querySelector('.card__title').textContent = name;
-
-  // Обработчики нажатий
-  cardImage.addEventListener('click', () => showImagePopup(name, link));
-
-  card.querySelector('.card__like-button').addEventListener('click', likeCard);
-  card.querySelector('.card__delete-button').addEventListener('click', deleteCard);
-
-  return card;
-}
-
-/** Функция нажатия на лайк */
-function likeCard(event) {
-  event.target.closest('.card__like-button').classList.toggle('card__like-button_active');
-}
-
-/** Функция удаления карточки при нажатии на кнопку */
-function deleteCard(event) {
-  event.target.closest('.card').remove();
-}
 
 /** Функция открывает нужный попап */
-function openPopup(popup) {
+export function openPopup (popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByKey);
 }
 
+/** Функция закрывает нужный попап */
+function closePopup (popup) {
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupByKey);
+}
+
 /** Обработчик для закрытия попапов по кнопке Esc */
-function closePopupByKey(evt) {
+function closePopupByKey (evt) {
   if (evt.key === 'Escape') {
     const popup = document.querySelector('.popup_opened');
     closePopup(popup);
   }
 }
 
-/** Функция закрывает нужный попап */
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', closePopupByKey);
-}
-
-/** Функция сохраняет введенные данные и закрывает попап */
-function saveProfileInfo(event) {
+/** Функция сохраняет введенные данные (профиль пользователя) и закрывает попап */
+function saveProfileInfo (event) {
   event.preventDefault();
   profileName.textContent = profileNameInput.value;
   profileJob.textContent = profileJobInput.value;
-  closePopup(profileEditPopup);
+  closePopup (profileEditPopup);
 }
 
-/** Функция сохраняет введенные данные и закрывает попап */
-function saveNewCard(event) {
+/** Функция сохраняет введенные данные (добавление карточки) и закрывает попап */
+function saveNewCard (event) {
   event.preventDefault();
+
   const card = {
     name: newCardTitle.value,
     link: newCardLink.value
   };
-  renderCards(cardsContainer, card);
+
+
+  renderCard(cardsContainer, card);
   closePopup(newCardPopup);
-  const button = event.submitter;
-  button.disabled = true;
-  button.classList.add('popup__save-button_disabled');
   newCardForm.reset();
+  formValidators[newCardForm.name].disableButtonState();
 }
 
-/** Функция открывает попап с увеличенной картинкой */
-function showImagePopup(name, link) {
-  imagePopupFigure.src = link;
-  imagePopupFigure.alt = name;
-  imagePopupCaption.textContent = name;
-  openPopup(imagePopup);
-}
 
-/** Обработчики событий */
+
+/** Обработчки событий */
 profileEditButton.addEventListener('click', function () {
   profileNameInput.value = profileName.textContent;
   profileNameInput.dispatchEvent(new Event('input'));
   profileJobInput.value = profileJob.textContent;
   profileJobInput.dispatchEvent(new Event('input'));
-  const submitButtonElement = profileEditPopup.querySelector('.popup__save-button');
   openPopup(profileEditPopup);
 });
 profileEditForm.addEventListener('submit', saveProfileInfo);
 
 newCardButton.addEventListener('click', function () {
-  newCardForm.reset();
-  const submitButtonElement = newCardPopup.querySelector('.popup__save-button');
   openPopup(newCardPopup);
 });
-
 newCardForm.addEventListener('submit', saveNewCard);
 
-buttonCloseList.forEach(btn => {
-  const popup = btn.closest('.popup');
-  btn.addEventListener('click', () => closePopup(popup));
-})
+popupCloseButtons.forEach( button => button.addEventListener('click', evt => {
+  const popup = evt.target.closest('.popup');
+  closePopup(popup);
+}) );
 
-popups.forEach(popup => {
+popups.forEach( popup => {
   popup.addEventListener('mousedown', evt => {
     if (evt.target === evt.currentTarget) closePopup(evt.target);
   });
 });
 
+
+/** Функция добавляет карточку на страницу
+ *
+ * Аргументы:
+ * - контейнер для вставки,
+ * - объект с карточкой
+ * {  name: Строка с именем объекта (заголовок карточки),
+ *    link: Строка с полным адресом изображения   }
+ *
+ * Шаблон карточки для генерации:
+ * блок <template id="card">
+ */
+function renderCard (container, cardData) {
+  container.prepend(getCardElement(cardData));
+  console.log(cardData);
+}
+
+/** Функция создает новый элемент карточки по ее содержанию */
+function getCardElement (cardData) {
+  const card = new Card(cardData, '#card'); // переменная card - экземпляр класса Card
+
+  return card.generateCard();
+}
+
 /** Отобразить исходные карточки при загрузке страницы */
-renderCards(cardsContainer, ...initialCards);
+initialCards.forEach(card => renderCard (cardsContainer, card));
+
+
+/** Функция запускает валидацию всех форм на странице */
+function validateForms (formClasses) {
+  const formElements = Array.from(document.querySelectorAll(formClasses.formSelector));
+  formElements.forEach( formElement => {
+    const form = new FormValidator(formClasses, formElement);
+    formValidators[formElement.getAttribute('name')] = form;
+    form.enableValidation();
+  });
+}
+
+/** Запустить валидацию форм на странице */
+validateForms({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_visible'
+});

@@ -27,28 +27,19 @@
       </div>
     </section>
     <section class="elements">
-  <!-- Шаблон карточки для генерации -->
-  <template id="cards">
-    <div class="card">
-      <img
-        src="#"
-        alt="#"
-        class="card__image">
-      <div class="card__group">
-        <h2 class="card__title">#</h2>
-        <button
-          type="button"
-          class="card__like-button"
-          aria-label="Добавить в избранное"></button>
-      </div>
-      <button
-        type="button"
-        class="card__delete-button"
-        aria-label="Удалить"></button>
-    </div>
-  </template>
-</section>
-</main>
+      <!-- Шаблон карточки для генерации -->
+      <template id="card">
+        <div class="card">
+          <img src="#" alt="#" class="card__image">
+          <div class="card__group">
+            <h2 class="card__title">#</h2>
+            <button type="button" class="card__like-button" aria-label="Добавить в избранное"></button>
+          </div>
+          <button type="button" class="card__delete-button" aria-label="Удалить"></button>
+        </div>
+      </template>
+    </section>
+  </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
@@ -60,25 +51,11 @@
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form" name="form_profile-edit" novalidate>
-        <input
-          id="name-input"
-          type="text"
-          class="popup__input popup__input_data_name"
-          placeholder="Введите имя и фамилию"
-          name="name"
-          minlength="2"
-          maxlength="40"
-          required>
+        <input id="name-input" type="text" class="popup__input popup__input_data_name"
+          placeholder="Введите имя и фамилию" name="name" minlength="2" maxlength="40" required>
         <span class="popup__input-error name-input-error"></span>
-        <input
-          id="job-input"
-          type="text"
-          class="popup__input popup__input_data_profession"
-          placeholder="Введите профессию"
-          name="profession"
-          minlength="2"
-          maxlength="200"
-          required>
+        <input id="job-input" type="text" class="popup__input popup__input_data_profession"
+          placeholder="Введите профессию" name="profession" minlength="2" maxlength="200" required>
         <span class="popup__input-error job-input-error"></span>
         <button class="popup__save-button" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
@@ -91,23 +68,12 @@
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form" name="form_card-add" novalidate>
-        <input
-          id="title-input"
-          type="text"
-          class="popup__input  popup__input_place_name"
-          placeholder="Название"
-          name="title"
-          minlength="2"
-          maxlength="30" required>
+        <input id="title-input" type="text" class="popup__input  popup__input_place_name" placeholder="Название"
+          name="title" minlength="2" maxlength="30" required>
         <span class="popup__input-error title-input-error"></span>
-        <input
-          id="link-input"
-          type="url"
-          class="popup__input  popup__input_place_link"
-          placeholder="Ссылка на картинку"
-          name="link"
-          required>
-          <span class="popup__input-error link-input-error"></span>
+        <input id="link-input" type="url" class="popup__input  popup__input_place_link" placeholder="Ссылка на картинку"
+          name="link" required>
+        <span class="popup__input-error link-input-error"></span>
         <button class="popup__save-button" type="submit" aria-label="Создать">Создать</button>
       </form>
     </div>
@@ -118,13 +84,15 @@
     <div class="popup__picture-container">
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       <img src="images/baikal.jpg" alt="Байкал" class="popup__picture-image">
-      <h2 class="popup__picture-title">Байкал</h2>
+      <figcaption class="popup__picture-title">#</figcaption>
     </div>
   </div>
 
-  <script src="./scripts/listplace.js"></script>
-  <script src="./scripts/index.js"></script>
-  <script src="./scripts/validate.js"></script>
+  <script type="module" src="./scripts/initialCards.js"></script>
+  <script type="module" src="./scripts/index.js"></script>
+  <script type="module" src="./scripts/validate.js"></script>
+  <script type="module" src="./scripts/Card.js"></script>
+  <script type="module" src="./scripts/FormValidator.js"></script>
 </body>
 
 </html>
