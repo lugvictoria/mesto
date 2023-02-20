@@ -1,13 +1,53 @@
-import initialCards from './initialCards.js';
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
+import initialCards from '../utils/initialCards.js';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+
+import Section from '../components/Section.js';
+import {
+  cardsSelector,
+  cardTemplateSelector,
+} from '../utils/constants.js';
+
+/** import {
+  cardsSelector,
+  cardTemplateSelector,
+  formSelector,
+  inputSelector,
+  submitButtonSelector,
+  inactiveButtonClass,
+  inputErrorClass,
+  errorClass,
+
+
+  profileEditPopupSelector,
+
+  profileName,
+  profileJob,
+  profileEditButton,
+  profileNameInput,
+  profileJobInput,
+  newCardButton,
+  newCardForm,
+
+  newCardPopupSelector,
+  imagePopupSelector
+} from '../utils/constants.js';
+import initialCards from '../utils/initialCards.js';
+import Section from '../components/Section.js';
+import Card from '../components/Card.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import FormValidator from '../components/FormValidator.js';
+import UserInfo from '../components/UserInfo.js';
+import './index.css'; // импорт css-стилей для сборки в Webpack /** */
+
+
 
 /** Элементы страницы */
 const profileEditButton = document.querySelector('.profile__button-edit');
 const profileName = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__subtitle');
 
-const newCardButton = document.querySelector('.profile__button-add');
 const cardsContainer = document.querySelector('.elements');
 
 const profileEditPopup = document.getElementById('popup_profile-edit');
@@ -19,6 +59,7 @@ const newCardPopup = document.getElementById('popup_card-add');
 const newCardForm = newCardPopup.querySelector('.popup__form');
 const newCardTitle = newCardPopup.querySelector('.popup__input_place_name');
 const newCardLink = newCardPopup.querySelector('.popup__input_place_link');
+const newCardButton = document.querySelector('.profile__button-add');
 const newCardSaveButton = newCardPopup.querySelector('.popup__save-button');
 
 export const imagePopup = document.getElementById('popup__picture');
@@ -74,7 +115,14 @@ function saveNewCard (event) {
   formValidators[newCardForm.name].disableButtonState();
 }
 
-/** Обработчки событий */
+// Инициализация классов
+const cardsSection = new Section({
+  items: initialCards,
+  renderer: renderCard
+}, cardsSelector);
+
+
+/** Обработчики событий */
 profileEditButton.addEventListener('click', function () {
   profileNameInput.value = profileName.textContent;
   profileNameInput.dispatchEvent(new Event('input'));
