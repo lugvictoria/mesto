@@ -10,12 +10,12 @@
 
 <body class="page">
   <header class="header">
-    <img src="images/logo.svg" class="header__logo" alt="Логотип Место">
+    <img src="<%=require('./images/logo.svg')%>" class="header__logo" alt="Логотип Место">
   </header>
   <main>
     <section class="profile">
       <div class="profile__table">
-        <img src="images/image.jpg" class="profile__avatar-image" alt="Фото Жак-Ив Кусто">
+        <img src="<%=require('./images/image.jpg')%>" class="profile__avatar-image" alt="Фото Жак-Ив Кусто">
         <div class="profile__info">
           <div class="profile__edit">
             <h1 class="profile__title">Жак-Ив&nbsp;Кусто</h1>
@@ -53,11 +53,11 @@
   <!-- Popups -->
 
   <!-- Popup: редактировать профиль -->
-  <div class="popup" id="popup_profile-edit">
+  <div class="popup popup_profile-edit">
     <div class="popup__container">
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="form_profile-edit" novalidate>
+      <form class="popup__form popup__form-profile" name="form_profile-edit" novalidate>
         <input
           id="name-input"
           type="text"
@@ -84,17 +84,17 @@
   </div>
 
   <!-- Popup: Создание новой карточки места -->
-  <div class="popup" id="popup_card-add">
+  <div class="popup popup_card-add">
     <div class="popup__container">
       <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form" name="form_card-add" novalidate>
+      <form class="popup__form popup__form-card" name="form_card-add" novalidate>
         <input
           id="title-input"
           type="text"
           class="popup__input  popup__input_place_name"
           placeholder="Название"
-          name="title"
+          name="name"
           minlength="2"
           maxlength="30"
           required>
@@ -120,18 +120,13 @@
         type="button"
         aria-label="Закрыть"></button>
       <img
-        src="images/baikal.jpg"
-        alt="Байкал"
+        src=""
+        alt=""
         class="popup__picture-image">
       <figcaption class="popup__picture-title">#</figcaption>
     </div>
   </div>
 
-  <script type="module" src="./utils/initialCards.js"></script>
-  <script type="module" src="./pages/index.js"></script>
-  <script type="module" src="./components/validate.js"></script>
-  <script type="module" src="./components/Card.js"></script>
-  <script type="module" src="./components/FormValidator.js"></script>
 </body>
 
 </html>

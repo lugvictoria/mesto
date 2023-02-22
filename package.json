@@ -1,20 +1,41 @@
 {
   "name": "mesto",
-  "version": "1.0.0",
-  "description": "Проект “Место”",
+  "version": "0.0.1",
+  "description": "Проект с использованием - HTML, CSS и JavaScript * * * **HTML** - Подключение стилей, шрифтов, скриптов - Семантика (правильное использование элементов, тегов) - Структура создана по методологии БЭМ * * * **CSS** - Адаптивность - Используется flex или grid-layout - Псевдоклассы :hover, :focus и т.д. - Отступы - Картинки в проекте не перекрывают текст - Цвета ссылок и текста - Фоновые цвета секций - Размеры, начертания и цвет шрифтов *** **JavaScript** - Popup окна - Валидация, ООП с использованием JS Classes * * * Сверстано по макету **Figma** * [Ссылка на макет в Figma](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=1124%3A2&t=gRVbUAShkF39fu31-0)",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lugvictoria/mesto.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lugvictoria/mesto/issues"
   },
-  "homepage": "https://github.com/lugvictoria/mesto#readme"
+  "homepage": "https://github.com/lugvictoria/mesto#readme",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "cssnano": "^5.1.14",
+    "gh-pages": "^5.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss-loader": "^7.0.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "core-js": "^3.27.2"
+  }
 }

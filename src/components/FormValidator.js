@@ -1,7 +1,7 @@
 export default class FormValidator {
   constructor (formClasses, formElement) {
     // Форма
-    this._formElement = formElement;
+    this._formElement = document.querySelector(formElement);
     // Селекторы и классы
     this._formSelector = formClasses.formSelector;
     this._inputSelector = formClasses.inputSelector;
