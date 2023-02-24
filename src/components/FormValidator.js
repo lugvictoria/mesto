@@ -2,6 +2,7 @@ export default class FormValidator {
   constructor (formClasses, formElement) {
     // Форма
     this._formElement = document.querySelector(formElement);
+    this._config = formClasses;
     // Селекторы и классы
     this._formSelector = formClasses.formSelector;
     this._inputSelector = formClasses.inputSelector;
@@ -12,6 +13,7 @@ export default class FormValidator {
     // Элементы формы
     this._inputElements = Array.from(this._formElement.querySelectorAll(this._inputSelector));
     this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
+    this._inputListError = Array.from(this._formElement.querySelectorAll(this._config.inputErrors));
   }
 
   enableValidation () {
@@ -73,4 +75,17 @@ export default class FormValidator {
   _hasInvalidInput () {
     return this._inputElements.some( inputElement => inputElement.validity.valid === false);
   }
+
+  clearForm() {
+    this._formElement.reset();
+
+    this._inputElements.forEach((input) => {
+      input.classList.remove(this._inputErrorClass);
+    })
+
+    this._inputListError.forEach((span) => {
+      span.textContent = ''
+    })
+  }
+
 }

@@ -1,12 +1,12 @@
-import './index.css'
-import initialCards from './utils/initialCards.js';
-import Card from './components/Card.js';
-import FormValidator from './components/FormValidator.js';
+import '../pages/index.css'
+import initialCards from '../utils/initialCards.js';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
 
-import Section from './components/Section.js';
-import PopupWithImage from './components/PopupWithImage.js';
-import PopupWithForm from './components/PopupWithForm.js';
-import UserInfo from './components/UserInfo.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
 
 import {
   cardsSelector,
@@ -31,7 +31,7 @@ import {
   imagePopupFigure,
   imagePopupCaption,
   enableValidation
-} from './utils/constants.js';
+} from '../utils/constants.js';
 
 const cardPopupValidator = new FormValidator(enableValidation, '.popup__form-card');
 cardPopupValidator.enableValidation();
@@ -81,18 +81,19 @@ const userInfo = new UserInfo({
 profileEditPopup.setEventListeners();
 
 profileEditButton.addEventListener('click', function () {
+  profilePopupValidator.clearForm();
   ({
     name: profileNameInput.value,
     job: profileJobInput.value
   } = userInfo.getUserInfo());
-  profileNameInput.dispatchEvent(new Event('input'));
-  profileJobInput.dispatchEvent(new Event('input'));
   profileEditPopup.open();
 });
 
 newCardPopup.setEventListeners();
 
 newCardButton.addEventListener('click', function () {
+cardPopupValidator.clearForm();
+cardPopupValidator.disableButtonState();
   newCardPopup.open();
 });
 
