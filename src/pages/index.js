@@ -55,7 +55,7 @@ const cardsSection = new Section({
   renderer: renderCard
 }, cardsSelector);
 
-// Вызов функций и методов при загрузке страницы
+// Вызов функций и методов при загрузке  страницы
 cardsSection.renderItems();
 
 const profileEditPopup = new PopupWithForm(profileEditPopupSelector, data => {
@@ -77,7 +77,7 @@ const userInfo = new UserInfo({
   jobElement: '.profile__subtitle',
 });
 
-// Установка слушателей событий
+// Установка  слушателей  событий
 profileEditPopup.setEventListeners();
 
 profileEditButton.addEventListener('click', function () {
