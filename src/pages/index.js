@@ -21,7 +21,6 @@ import {
   newCardButton,
   newCardPopupSelector,
   enableValidation,
-  profileAvatar,
   changeAvatar,
 } from "../utils/constants.js";
 
@@ -39,8 +38,8 @@ const deletePopup = new PopupDelete(".popup_delete", deleteHandler);
 
 const userInfo = new UserInfo({
   nameElement: ".profile__title",
-  jobElement: ".profile__subtitle",
-});
+  jobElement: ".profile__subtitle"
+}, ".profile__avatar-image");
 
 const cardsSection = new Section((item, userId) => {
   const cardItem = renderCard(item, userId);
@@ -77,7 +76,7 @@ function avatarHandler(value, submitButton) {
   api
     .setAvatar(value.avatarURL)
     .then((res) => {
-      profileAvatar.src = res.avatar;
+      userInfo.setAvatar(res.avatar);
 
       avatarPopupValidator.clearForm();
       avatarPopup.close();
@@ -93,6 +92,7 @@ function deleteHandler(element, elementId, submitButton) {
     .removeCard(elementId)
     .then(() => {
       element.remove();
+      element = null;
       this.close();
     })
     .catch((e) => console.log("Delete Error: ", e))
@@ -121,6 +121,7 @@ function clickLikeClick(element, elementId, isLiked) {
       .removeLike(elementId)
       .then((update) => {
         element.updateLikes(update.likes.length);
+        this._elementLike.classList.remove("card__like-button_active");
       })
       .catch((err) => console.log("Remove Like Error: ", err));
   } else {
@@ -128,6 +129,7 @@ function clickLikeClick(element, elementId, isLiked) {
       .addLike(elementId)
       .then((update) => {
         element.updateLikes(update.likes.length);
+        this._elementLike.classList.add("card__like-button_active");
       })
       .catch((err) => console.log("Add Like Error: ", err));
   }
@@ -192,7 +194,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
     const initialCards = res[0];
     const user = res[1];
 
-    profileAvatar.src = user.avatar;
+    userInfo.setAvatar(user.avatar);
     userInfo.setUserInfo(user);
     userInfo.id = user._id;
 

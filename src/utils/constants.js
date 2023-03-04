@@ -23,7 +23,6 @@ export const profileJobInput = profileEditPopupElement.querySelector(
 export const newCardPopupSelector = ".popup_card-add";
 export const newCardButton = document.querySelector(".profile__button-add");
 
-export const profileAvatar = document.querySelector(".profile__avatar-image");
 export const changeAvatar = document.querySelector(".profile__avatar-button");
 
 /** Запуск валидации форм на странице */

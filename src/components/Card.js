@@ -38,7 +38,6 @@ export default class Card {
   }
 
   _likeCard() {
-    this._elementLike.classList.toggle("card__like-button_active");
     this._clickLike(this, this._id, this._isLiked);
     this._isLiked = !this._isLiked;
   }
@@ -102,6 +101,5 @@ export default class Card {
 
   _deleteCard() {
     this._openPopupDelete(this._element, this._id);
-    this._element = null;
   }
 }

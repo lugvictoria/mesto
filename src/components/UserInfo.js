@@ -6,9 +6,10 @@ export default class UserInfo {
    * nameElement - элемент с именем пользователя
    * jobElement - элемент с описанием деятельности пользователя
    */
-  constructor({nameElement, jobElement}) {
+  constructor({nameElement, jobElement}, avatar) {
     this._nameElement = document.querySelector(nameElement);
     this._jobElement = document.querySelector(jobElement);
+    this._avatar = document.querySelector(avatar);
   }
 
   getUserInfo() {
@@ -21,5 +22,9 @@ export default class UserInfo {
   setUserInfo({name, about}) {
     this._nameElement.textContent = name;
     this._jobElement.textContent = about;
+  }
+
+  setAvatar(avatar) {
+    this._avatar.src = avatar;
   }
 }
