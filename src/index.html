@@ -15,7 +15,16 @@
   <main>
     <section class="profile">
       <div class="profile__table">
-        <img src="<%=require('./images/image.jpg')%>" class="profile__avatar-image" alt="Фото Жак-Ив Кусто">
+        <div class="profile__avatar-outside">
+          <button class="profile__avatar-button" type="button" aria-label="Изменить аватар">
+            <img
+              class="profile__avatar-image"
+              src="#"
+              alt="аватар"
+            />
+          </button>
+        </div>
+
         <div class="profile__info">
           <div class="profile__edit">
             <h1 class="profile__title">Жак-Ив&nbsp;Кусто</h1>
@@ -36,20 +45,39 @@
             class="card__image">
           <div class="card__group">
             <h2 class="card__title">#</h2>
-            <button
-              type="button"
-              class="card__like-button"
-              aria-label="Добавить в избранное"></button>
+            <div class="card__like-button-group">
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Добавить в избранное">
+              </button>
+              <span class="card__like-count">0</span>
+            </div>
           </div>
           <button type="button" class="card__delete-button" aria-label="Удалить"></button>
         </div>
       </template>
+      <template id="cardWithoutBasket">
+        <div class="card">
+          <img
+            src="#"
+            alt="#"
+            class="card__image">
+          <div class="card__group">
+            <h2 class="card__title">#</h2>
+            <div class="card__like-button-group">
+              <button
+                type="button"
+                class="card__like-button"
+                aria-label="Добавить в избранное">
+              </button>
+              <span class="card__like-count">0</span>
+            </div>
+          </div>
+        </div>
+      </template>
     </section>
   </main>
-  <footer class="footer">
-    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
-  </footer>
-
   <!-- Popups  -->
 
   <!-- Popup: редактировать  профиль -->
@@ -127,6 +155,36 @@
     </div>
   </div>
 
-</body>
+  <div class="popup popup_avatar">
+    <div class="popup__container">
+      <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
+      <h2 class="popup__title">Обновить аватар</h2>
+      <form class="popup__form" name="form_change_avatar" novalidate>
+        <input
+          id="title-input"
+          type="url"
+          class="popup__input  popup__input_place_name"
+          placeholder="Ссылка на аватар"
+          name="avatarURL"
+          required>
+        <span class="popup__input-error title-input-error"></span>
+        <button class="popup__save-button" type="submit" aria-label="Создать">Обновить</button>
+      </form>
+    </div>
+  </div>
 
+    <div class="popup popup__delete">
+      <div class="popup__container">
+        <form action="#" class="popup__form" name="deleteCard" novalidate>
+          <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
+          <h2 class="popup__title">Вы уверены?</h2>
+          <button class="popup__save-button" type="submit" aria-label="Подтвердить">Да</button>
+        </form>
+      </div>
+    </div>
+
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+  </footer>
+</body>
 </html>

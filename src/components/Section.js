@@ -7,17 +7,15 @@ export default class Section {
    * renderer - функция, которая отвечает за создание и отрисовку данных на странице,
    * containerSelector - селектор контейнера, в который нужно добавлять созданные элементы
    */
-  constructor({items, renderer}, containerSelector) {
-    this._items = items;
+  constructor(renderer, containerSelector) {
     this._renderer = renderer;
     this._container = document.querySelector(containerSelector);
   }
 
-  renderItems() {
-    this._items.forEach(item => {
-      const element = this._renderer(item);
-      this.addItem(element);
-    })
+  renderItems(cards, userId) {
+    cards.forEach((item) => {
+      this._renderer(item, userId);
+    });
   }
 
   addItem(item) {
