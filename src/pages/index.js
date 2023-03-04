@@ -35,7 +35,7 @@ const api = new Api({
 
 const imagePopup = new PopupWithImage(".popup_picture");
 const avatarPopup = new PopupWithForm(".popup_avatar", avatarHandler);
-const deletePopup = new PopupDelete(".popup__delete", deleteHandler);
+const deletePopup = new PopupDelete(".popup_delete", deleteHandler);
 
 const userInfo = new UserInfo({
   nameElement: ".profile__title",
