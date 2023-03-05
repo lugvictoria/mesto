@@ -120,16 +120,16 @@ function clickLikeClick(element, elementId, isLiked) {
     api
       .removeLike(elementId)
       .then((update) => {
-        element.updateLikes(update.likes.length);
-        this._elementLike.classList.remove("card__like-button_active");
+        element.updateLikesCount(update.likes.length);
+        element.changeLikeColor();
       })
       .catch((err) => console.log("Remove Like Error: ", err));
   } else {
     api
       .addLike(elementId)
       .then((update) => {
-        element.updateLikes(update.likes.length);
-        this._elementLike.classList.add("card__like-button_active");
+        element.updateLikesCount(update.likes.length);
+        element.changeLikeColor();
       })
       .catch((err) => console.log("Add Like Error: ", err));
   }

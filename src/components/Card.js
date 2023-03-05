@@ -42,8 +42,12 @@ export default class Card {
     this._isLiked = !this._isLiked;
   }
 
-  updateLikes(count) {
+  updateLikesCount(count) {
     this._elementLikeCounter.textContent = count;
+  }
+
+  changeLikeColor() {
+    this._elementLike.classList.toggle("card__like-button_active");
   }
 
   generateCard() {
